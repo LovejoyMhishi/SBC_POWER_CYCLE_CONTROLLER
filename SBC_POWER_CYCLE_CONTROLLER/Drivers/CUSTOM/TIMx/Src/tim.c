@@ -26,9 +26,7 @@
 
 #include "tim.h"
 
-volatile uint8_t SecCnt = 0;
-volatile uint8_t MinCnt = 0;
-volatile uint8_t HouCnt = 0;
+volatile uint32_t ElapsedSec = 0;
 
 void TIM14_Init(void)
 {

@@ -23,6 +23,7 @@
 /* USER CODE BEGIN Includes */
 #include <gpio.h>
 #include <tim.h>
+#include <app.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -71,7 +72,7 @@ int main(void)
   /* MCU Configuration--------------------------------------------------------*/
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
-  LL_APB2_GRP1_EnableClock(LL_APB2_GRP1_PERIPH_SYSCFG);
+   LL_APB2_GRP1_EnableClock(LL_APB2_GRP1_PERIPH_SYSCFG);
   LL_APB1_GRP1_EnableClock(LL_APB1_GRP1_PERIPH_PWR);
 
   /* SysTick_IRQn interrupt configuration */
@@ -93,12 +94,15 @@ int main(void)
   GPIO_Init();
   TIM14_Init();
   TIMx_Start(TIM14);
+  SBC_PWR_CYCLE_CTRLER_Init();
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+
+	  SBC_PWR_CYCLE_CTRLER();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

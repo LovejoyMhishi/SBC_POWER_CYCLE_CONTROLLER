@@ -34,9 +34,8 @@
 
 void TIM14_Init(void);
 
-extern volatile uint8_t SecCnt;
-extern volatile uint8_t MinCnt;
-extern volatile uint8_t HouCnt;
+extern volatile uint32_t ElapsedSec;
+
 
 __STATIC_INLINE void TIMx_Start(TIM_TypeDef *TIMx)
 {

@@ -44,7 +44,7 @@
 #define INTERVAL_12H_SEL                             (1U << 4)   		//GPIO PA4
 #define INTERVAL_01H_SEL                             (1U << 5)   		//GPIO PA5
 #define INTERVAL_06H_SEL                             (1U << 6)          //GPIO PA6
-#define INTERVAL_24H_SEL                             (1U << 0)          //GPIO PB0
+#define INTERVAL_18H_SEL                             (1U << 0)          //GPIO PB0
 #define LED_GRN                                      (1U << 7)   		//GPIO PB7
 
 /* ──────────────────────────────────────────────────────────────────────────────────────────────────────── */
@@ -56,6 +56,9 @@ typedef enum
 {
     GPIO_PIN_RESET         = 0,
     GPIO_PIN_SET           = 1,
+
+    GPIO_PIN_SBC_PWR_CTRL_SET   = 0,
+    GPIO_PIN_SBC_PWR_CTRL_RESET = 1
 
 } GPIO_PinState;
 

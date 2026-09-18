@@ -150,25 +150,7 @@ void TIM14_IRQHandler(void)
     if (READ_BIT(TIM14->SR, TIM_SR_UIF))
     {
         CLEAR_BIT(TIM14->SR, TIM_SR_UIF);
-
-        SecCnt++;
-
-        if (SecCnt >= 60)
-        {
-            SecCnt = 0;
-            MinCnt++;
-
-            if (MinCnt >= 60)
-            {
-                MinCnt = 0;
-                HouCnt++;
-
-                if (HouCnt >= 24)
-                {
-                    HouCnt = 0;
-                }
-            }
-        }
+        ElapsedSec++;
     }
 }
 
